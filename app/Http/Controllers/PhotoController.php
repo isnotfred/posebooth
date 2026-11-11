@@ -25,7 +25,15 @@ class PhotoController extends Controller
         $this->storageDir = storage_path('app/public/photobooth');
 
         if (!File::exists($this->storageDir)) {
-            File::makeDirectory($this->storageDir, 0755, true);
+            try {
+                File::makeDirectory($this->storageDir, 0755, true);
+            } catch (\Throwable $e) {
+                // Fallback to system temp directory for serverless environments (e.g. Vercel)
+                $this->storageDir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'photobooth';
+                if (!File::exists($this->storageDir)) {
+                    File::makeDirectory($this->storageDir, 0755, true);
+                }
+            }
         }
     }
 
