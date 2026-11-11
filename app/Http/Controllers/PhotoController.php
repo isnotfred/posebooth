@@ -44,15 +44,19 @@ class PhotoController extends Controller
     {
         $sessionId = $request->session()->getId();
 
-        $recentPhotos = Photo::query()
-            ->where(function ($query) use ($sessionId) {
-                $query->where('session_id', $sessionId)
-                    ->orWhereNull('session_id');
-            })
-            ->where('type', 'single')
-            ->latest()
-            ->take(5)
-            ->get();
+        try {
+            $recentPhotos = Photo::query()
+                ->where(function ($query) use ($sessionId) {
+                    $query->where('session_id', $sessionId)
+                        ->orWhereNull('session_id');
+                })
+                ->where('type', 'single')
+                ->latest()
+                ->take(5)
+                ->get();
+        } catch (\Throwable $e) {
+            $recentPhotos = collect();
+        }
 
         return view('photobooth', [
             'recentPhotos' => $recentPhotos,
@@ -67,27 +71,31 @@ class PhotoController extends Controller
     {
         $sessionId = $request->session()->getId();
 
-        $photos = Photo::query()
-            ->where(function ($query) use ($sessionId) {
-                if ($sessionId) {
-                    $query->where('session_id', $sessionId)
-                        ->orWhereNull('session_id');
-                }
-            })
-            ->where('type', 'single')
-            ->latest()
-            ->take(5)
-            ->get()
-            ->map(function (Photo $photo): array {
-                return [
-                    'id' => $photo->id,
-                    'filename' => $photo->filename,
-                    'url' => route('photos.show', ['filename' => $photo->filename]),
-                    'download_url' => route('photos.download', ['filename' => $photo->filename]),
-                    'type' => $photo->type,
-                    'created_at' => $photo->created_at?->toIso8601String(),
-                ];
-            });
+        try {
+            $photos = Photo::query()
+                ->where(function ($query) use ($sessionId) {
+                    if ($sessionId) {
+                        $query->where('session_id', $sessionId)
+                            ->orWhereNull('session_id');
+                    }
+                })
+                ->where('type', 'single')
+                ->latest()
+                ->take(5)
+                ->get()
+                ->map(function (Photo $photo): array {
+                    return [
+                        'id' => $photo->id,
+                        'filename' => $photo->filename,
+                        'url' => route('photos.show', ['filename' => $photo->filename]),
+                        'download_url' => route('photos.download', ['filename' => $photo->filename]),
+                        'type' => $photo->type,
+                        'created_at' => $photo->created_at?->toIso8601String(),
+                    ];
+                });
+        } catch (\Throwable $e) {
+            $photos = collect();
+        }
 
         return response()->json([
             'photos' => $photos,
