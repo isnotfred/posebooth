@@ -28,8 +28,7 @@ The user interface features a retro studio aesthetic built around a strict palet
 - **Flexible Export Options**:
   - Download individual photos as PNG
   - Bulk download all photos with staggered timing
-  - Print vertical photo strips formatted for standard 3.5in print media
-  - Save photo strips directly to the cloud backend
+  - Download compiled vertical photo strips as high-resolution PNG
 - **Offline PoseNet Fallback**: Bundled local TensorFlow.js and PoseNet vendor scripts with automated CDN fallback for zero-downtime reliability.
 - **Resilient Storage**: Browser storage with automated fallback synchronization against the Laravel backend REST API.
 

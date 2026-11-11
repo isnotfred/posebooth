@@ -184,9 +184,15 @@
                     <!-- Skeleton Active Badge (Bottom Left) -->
                     <div id="skeletonIndicator" class="absolute bottom-3 left-3 z-20 flex items-center gap-1.5 bg-[#000000]/80 backdrop-blur-md px-2.5 py-1 rounded-md border border-[#FF9000]/40 text-[11px] font-semibold text-[#FF9000]">
                         <!-- Skeleton icon vector -->
-                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="5" r="2"/>
-                            <path d="M12 7v8M8 10h8M9 21l3-6 3 6M9 13l-2 5M15 13l2 5"/>
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="4" r="2"/>
+                            <path d="M12 6v7"/>
+                            <path d="M5 13l2.5-4.5 4.5 1 4.5-1 2.5 4.5"/>
+                            <circle cx="5" cy="13" r="1" fill="currentColor"/>
+                            <circle cx="19" cy="13" r="1" fill="currentColor"/>
+                            <path d="M8.5 21l2-8h3l2 8"/>
+                            <circle cx="8.5" cy="21" r="1" fill="currentColor"/>
+                            <circle cx="15.5" cy="21" r="1" fill="currentColor"/>
                         </svg>
                         <span>Skeleton Active</span>
                     </div>
@@ -227,9 +233,15 @@
                         <!-- Show Skeleton Toggle -->
                         <button id="btnToggleSkeleton" type="button" class="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium border border-[#FF9000]/40 bg-[#FF9000]/10 text-[#FF9000] hover:bg-[#FF9000]/20 transition cursor-pointer">
                             <!-- Skeleton vector -->
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="5" r="2"/>
-                                <path d="M12 7v8M8 10h8M9 21l3-6 3 6M9 13l-2 5M15 13l2 5"/>
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="4" r="2"/>
+                                <path d="M12 6v7"/>
+                                <path d="M5 13l2.5-4.5 4.5 1 4.5-1 2.5 4.5"/>
+                                <circle cx="5" cy="13" r="1" fill="currentColor"/>
+                                <circle cx="19" cy="13" r="1" fill="currentColor"/>
+                                <path d="M8.5 21l2-8h3l2 8"/>
+                                <circle cx="8.5" cy="21" r="1" fill="currentColor"/>
+                                <circle cx="15.5" cy="21" r="1" fill="currentColor"/>
                             </svg>
                             <span id="skeletonBtnLabel">Skeleton: ON</span>
                         </button>
@@ -237,8 +249,11 @@
                         <!-- Hand Detection Toggle -->
                         <button id="btnToggleHandDetect" type="button" class="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium border border-[#FF9000]/40 bg-[#FF9000]/10 text-[#FF9000] hover:bg-[#FF9000]/20 transition cursor-pointer">
                             <!-- Hand vector -->
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M18 11V6a2 2 0 0 0-4 0v4M14 10V4a2 2 0 0 0-4 0v6M10 10.5V6a2 2 0 0 0-4 0v8a7 7 0 0 0 14 0v-4a2 2 0 0 0-4 0"/>
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 11V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v0"/>
+                                <path d="M14 10V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v2"/>
+                                <path d="M10 10.5V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v8"/>
+                                <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
                             </svg>
                             <span id="handDetectBtnLabel">Hand Trigger: ON</span>
                         </button>
@@ -313,11 +328,10 @@
             <!-- Quick Instructions / Gesture Guide Banner -->
             <div class="bg-[#0a0a0a] border border-[#222222] rounded-xl p-4 flex items-start gap-3.5">
                 <div class="w-9 h-9 rounded-lg bg-[#FF9000]/10 border border-[#FF9000]/25 text-[#FF9000] flex items-center justify-center shrink-0">
-                    <!-- Info icon vector -->
-                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <line x1="12" y1="16" x2="12" y2="12"/>
-                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                    <!-- Instructions / Guidebook vector -->
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
                     </svg>
                 </div>
                 <div class="text-xs leading-relaxed text-zinc-300">
@@ -505,20 +519,6 @@
             <div class="px-6 py-4 bg-[#050505] border-t border-[#202020] flex items-center justify-between gap-3 strip-no-print">
                 <span id="rollSaveStatus" class="text-xs text-zinc-400"></span>
                 <div class="flex items-center gap-2">
-                    <button id="btnPrintRoll" type="button" class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#141414] hover:bg-[#1f1f1f] text-zinc-200 border border-[#2a2a2a] transition cursor-pointer">
-                        <svg class="w-3.5 h-3.5 text-zinc-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 6 2 18 2 18 9"/>
-                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
-                            <rect x="6" y="14" width="12" height="8"/>
-                        </svg>
-                        <span>Print</span>
-                    </button>
-                    <button id="btnSaveRollToServer" type="button" class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#141414] hover:bg-[#1f1f1f] text-zinc-200 border border-[#2a2a2a] transition cursor-pointer">
-                        <svg class="w-3.5 h-3.5 text-zinc-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
-                        </svg>
-                        <span>Save Cloud</span>
-                    </button>
                     <button id="btnDownloadRoll" type="button" class="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-[#FF9000] hover:bg-[#e07e00] text-black shadow-md shadow-[#FF9000]/25 transition cursor-pointer">
                         <svg class="w-3.5 h-3.5 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
