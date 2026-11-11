@@ -33,6 +33,8 @@
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "true",
+    "APP_URL": "https://posebooth.vercel.app",
+    "ASSET_URL": "https://posebooth.vercel.app",
     "APP_KEY": "base64:eGwG8H9PzC9T8Ef0s6lJg/1dIEyRV9DV0C2KgqpJ2no=",
     "APP_CONFIG_CACHE": "/tmp/config.php",
     "APP_EVENTS_CACHE": "/tmp/events.php",
