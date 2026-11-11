@@ -10,6 +10,9 @@
     <!-- Tailwind & App Assets -->
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @else
+        <link rel="stylesheet" href="{{ asset('build/assets/app-CIzWXUfV.css') }}">
+        <script type="module" src="{{ asset('build/assets/app-DUltSDOz.js') }}"></script>
     @endif
 
     <style>
