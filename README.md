@@ -191,6 +191,16 @@ git push -u origin main
 
 ---
 
+## Team Members
+
+- **Frederick Orlain**
+- **Patrick Dohn Joseph Lontok**
+- **Ivan Liao**
+- **Kier Bardelosa**
+- **James Angelo Bolaño**
+
+---
+
 ## License
 
 This project is open-source software licensed under the [MIT License](LICENSE).
