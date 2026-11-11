@@ -19,6 +19,16 @@ foreach ($serverlessDirs as $dir) {
     }
 }
 
+// Ensure SQLite database exists in writable /tmp
+$sqliteDb = '/tmp/database.sqlite';
+if (!file_exists($sqliteDb)) {
+    if (file_exists(__DIR__ . '/../database/database.sqlite') && filesize(__DIR__ . '/../database/database.sqlite') > 0) {
+        @copy(__DIR__ . '/../database/database.sqlite', $sqliteDb);
+    } else {
+        @touch($sqliteDb);
+    }
+}
+
 // Forward request to Laravel public/index.php
 require __DIR__ . '/../public/index.php';
 
